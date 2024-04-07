@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="shortcut icon" href="/static/images/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/feedbackstyle.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        {% if message %}
+            <h1 style="background: wheat; color: green; text-align: center;">{{message}}</h1>
+        {% endif %}
+        <form method="post" class="feedbackForm">
+            {% csrf_token %}
+            <h2 style="text-align: center;">Feedback</h2>
+            <label for="fname">
+                <input type="text" name="fname" id="fname" required placeholder="First Name">
+            </label>
+            <label for="lname">
+                <input type="text" name="lname" id="lname" required placeholder="Last Name">
+            </label>
+            <label for="umail">
+                <input type="email" name="umail" id="umail" required placeholder="E-mail ID">
+            </label>
+            <label for="phno">
+                <input type="tel" name="phno" id="phno" required placeholder="Mobile Number">
+            </label>
+            <label for="cntry">
+                <input type="radio" name="cntry" required value="India">India
+                <input type="radio" name="cntry" required value="USA">USA
+                <input type="radio" name="cntry" required value="Australia">Australia
+                <input type="radio" name="cntry" required value="Other">Other
+            </label>
+            <label for="uaddress">
+                <textarea name="uaddress" id="address" cols="30" rows="10" required placeholder="Address"></textarea>
+            </label>
+            <label for="content">
+                <textarea name="content" id="content" cols="30" rows="10" required placeholder="Feedback"></textarea>
+            </label>
+
+            <span>
+                <input type="reset" value="RESET">
+                <input type="submit" value="SUBMIT">
+            </span>
+        </form>
+    </main>
+
+    {% include "footer.html" %}
+</body>
+
+</html>

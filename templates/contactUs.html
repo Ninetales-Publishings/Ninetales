@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="/static/images/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/contactUsstyle.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        {% if message %}
+            <h1 style="background: wheat; color: green; text-align: center;">{{message}}</h1>
+        {% endif %}
+        <div class="contactblock">
+            <form method="post">
+                <div class="formText">
+                    <h2>How Can We <span>Help</span>?</h2>
+                </div>
+                {% csrf_token %}
+                <input type="text" required name="name" placeholder="Name">
+                <input type="email" required name="email" placeholder="Email">
+                <input type="tel" required name="phno" placeholder="Mobile Number">
+                <select name="enquiry" required id="enquiry">
+                    <option selected value="NaQ">-Select a Query-</option>
+                    <option value="Query1">Submission Queries</option>
+                    <option value="Query2">Press and Marketing Enquiries</option>
+                    <option value="Query3">General Enquiries</option>
+                </select>
+                <input type="text" required name="subject" placeholder="Subject">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+
+            <div class="contactText">
+                <div class="contactDetails">
+                    <div>
+                        <div>
+                            <h2>Nine<span>tales</span> Publishings</h2>
+                            <p>An ISO Certified Company</p>
+                        </div>
+                        <div>
+                            <div class="info">
+                                <img src="/static/images/callIcon.png" alt="">
+                                <p>+91-98736 34306</p>
+                            </div>
+                            <div class="info">
+                                <img src="/static/images/mailIcon.png" alt="">
+                                <p>info@ninetalespublishings.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <p>Follow us on</p>
+                    <div>
+                        <a href="#"><img src="/static/images/facebook.svg" alt=""></a>
+                        <a href="#"><img src="/static/images/instagram.svg" alt=""></a>
+                        <a href="#"><img src="/static/images/linkedin.svg" alt=""></a>
+                    </div>
+                </div>
+
+                <p>"Serving authors worldwide from our home office in Delhi, India."</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    {% include "footer.html" %}
+</body>
+
+</html>

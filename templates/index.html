@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Tales</title>
+    <link rel="shortcut icon" href="/static/images/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/indexstyle.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        <section class="intro">
+            <div class="introImage">
+                <img src="/static/images/introbgGirl-removebg-preview.png" alt="">
+                <div class="typed">
+                    <!-- NineTales Publishings -->
+                </div>
+            </div>
+            <div class="introtext">
+                <span>Publish Your Books with us & get Satisfied</span>
+                <p>Publishing means your dreams to come true. Your <b>Trust</b> is our <b>Responisbility</b></p>
+                <div class="introMail">
+                    Let's Make it happen
+                    <form action="https://wa.me/9136727648" target="_blank" method="get">
+                        <div class="mailInput">
+                            <input type="text" name="text" placeholder="Chat with us">
+                            <button type="submit">
+                                <img src="/static/images/whatsappIcon.png" alt="">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="banner">
+            <div>
+                <div>
+                    <h1>Accepting Manuscripts</h1>
+                    <p>From all over the World.</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="carouselContainer">
+            <div class="carousel">
+                <div class="carouselCard">
+                    <h1>Zero</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>One</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>Two</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>Three</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>Four</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>Five</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>6</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>7</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>8</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>9</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>10</h1>
+                </div>
+
+
+                <div class="carouselCard">
+                    <h1>0</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>1</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>2</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>3</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>4</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>5</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>6</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>7</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>8</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>9</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>10</h1>
+                </div>
+
+                <div class="carouselCard">
+                    <h1>0</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>1</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>2</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>3</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>4</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>5</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>6</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>7</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>8</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>9</h1>
+                </div>
+                <div class="carouselCard">
+                    <h1>10</h1>
+                </div>
+            </div>
+            <button class="before" onclick="scrolltoleft()">
+
+            </button>
+            <button class="after" onclick="scrolltoright()">
+
+            </button>
+        </section>
+        <hr>
+        <section class="bestsellerContainer">
+            <div>
+                <h2>Upcoming books</h2>
+                <p>Read what millions have loved</p>
+                <div class="bestsellers">
+                    {% for book in books %}
+                    {% if book %}
+                    <div class="book">
+                        <a href="/books/{{book.BookName}}">
+                            <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="">
+                        </a>
+                        <p>{{ book.BookName }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <div>
+                        And many more to come.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="subscribe">
+                {% if message %}
+                <h1 style="background: wheat; color: green; text-align: center;">{{message}}</h1>
+                {% endif %}
+                <h2>Stay in touch with us!</h2>
+                <p>Be the first to know about new releases.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="fullName" required placeholder="Full Name">
+                    <input type="email" name="Email" required placeholder="E-mail">
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <script src="/static/indexscript.js"></script>
+    {% include "footer.html" %}
+</body>
+
+</html>

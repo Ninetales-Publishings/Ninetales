@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="shortcut icon" href="/static/images/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/faqstyle.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        <h1>Frequently Asked Questions</h1>
+        <div class="questions">
+            <div>
+                <div class="question">
+                    <div class="icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <h2>What is NineTale?</h2>
+                </div>
+                <div class="answer">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia numquam praesentium molestiae
+                    maiores nobis amet eveniet mollitia consequuntur quod? Reiciendis.
+                </div>
+            </div>
+            <div>
+                <div class="question">
+                    <div class="icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <h2>What is NineTale?</h2>
+                </div>
+                <div class="answer">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia numquam praesentium molestiae
+                    maiores nobis amet eveniet mollitia consequuntur quod? Reiciendis.
+                </div>
+            </div>
+            <div>
+                <div class="question">
+                    <div class="icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <h2>What is NineTale?</h2>
+                </div>
+                <div class="answer">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia numquam praesentium molestiae
+                    maiores nobis amet eveniet mollitia consequuntur quod? Reiciendis.
+                </div>
+            </div>
+            <div>
+                <div class="question">
+                    <div class="icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <h2>What is NineTale?</h2>
+                </div>
+                <div class="answer">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia numquam praesentium molestiae
+                    maiores nobis amet eveniet mollitia consequuntur quod? Reiciendis.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text">
+            Can't find what you are looking for?<br>
+            Send us your query <a href="contactUs">Here</a>
+        </div>
+    </main>
+    <script>
+        let questions = document.querySelector(".questions");
+
+        document.querySelectorAll(".icon").forEach(tar => {
+            tar.addEventListener("click",()=>{
+                if (tar.style.transform == "") {
+                    tar.style.transform = "rotate(45deg)";
+                    tar.parentElement.nextElementSibling.style.height = "4em";
+                } else {
+                    tar.style = "";
+                    tar.parentElement.nextElementSibling.style.height = ""
+                }
+        })
+        });
+    </script>
+    {% include "footer.html" %}
+</body>
+
+</html>

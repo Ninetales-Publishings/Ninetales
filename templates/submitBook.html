@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit your book</title>
+    <link rel="shortcut icon" href="/static/images/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/submitBookstyle.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        {% if message %}
+            <h1 style="background: wheat; color: green; text-align: center;">{{message}}</h1>
+        {% endif %}
+        <section>
+            <div class="information">
+                <div class="guidelines">
+                    <h3>Submission Guidelines</h3>
+                    <div>
+                        <p><span>01</span> Covering Letter</p>
+                        <ul>
+                            <li>Your full name.</li>
+                            <li>Your postal address, telephone number and email address.</li>
+                            <li>An estimated word count for your complete manuscript.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><span>02</span> Submission format</p>
+                        <ul>
+                            <li>Submit your manuscript in MS-word format.</li>
+                            <li>Provide a brief author bio.</li>
+                            <li>Description of your book.</li>
+                            <li>Include Preface and Acknowledgement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <div>
+                            <h2>Nine<span>tales</span> Publishings</h2>
+                            <p>An ISO Certified Company</p>
+                        </div>
+                        <div>
+                            <div class="info">
+                                <img src="/static/images/callIcon.png" alt="">
+                                <p>+91-98736 34306</p>
+                            </div>
+                            <div class="info">
+                                <img src="/static/images/mailIcon.png" alt="">
+                                <p>info@ninetalespublishings.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="icons">
+                        <p>Follow us on</p>
+                        <div>
+                            <a href="#"><img src="/static/images/facebook.svg" alt=""></a>
+                            <a href="#"><img src="/static/images/instagram.svg" alt=""></a>
+                            <a href="#"><img src="/static/images/linkedin.svg" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            
+            <form method="post" class="bookDetails" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="bookName">
+                    <!-- Book Title: -->
+                    <input type="text" name="bookName" id="bookName" required placeholder="Book Title">
+                </label>
+                <label for="writerName">
+                    <!-- Author Name: -->
+                    <input type="text" name="writerName" id="writerName" required placeholder="Author's Name">
+                </label>
+                <label for="address">
+                    <!-- Author Name: -->
+                    <input type="text" name="address" id="address" required placeholder="Address">
+                </label>
+                <label for="mainFile">
+                    Main File: <br>
+                    <input type="file" name="mainFile" required id="mainFile">
+                </label>
+                <label for="authorProfile">
+                    Author Profile: <br>
+                    <input type="file" name="authorProfile" required id="authorProfile">
+                </label>
+                <label for="otherFile">
+                    Other File: <br>
+                    <input type="file" name="otherFile" required id="otherFiles">
+                </label>
+                <label for="message">
+                    <!-- Any Note: <br> -->
+                    <textarea name="message" id="message" cols="30" rows="10" required
+                        placeholder="Any Note"></textarea>
+                </label>
+
+                <span>
+                    <input type="submit" value="Submit your book">
+                </span>
+            </form>
+        </section>
+    </main>
+
+    {% include "footer.html" %}
+</body>
+
+</html>
