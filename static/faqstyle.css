@@ -1,0 +1,47 @@
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    background: url("/static/images/bodybg.jpg");
+    background-size: cover;
+}
+
+.questions>div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+.question{
+    display: flex;
+    gap : 10px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 500ms;
+    padding: 5px;
+}
+.icon .bar{
+    width: 20px;
+    height: 2px;
+    background: black;
+}
+.icon .bar:last-child{
+    transform: rotate(90deg) translateX(-2px);
+}
+
+.answer{
+    height: 0px;
+    transition: all 500ms;
+    overflow: hidden;
+    max-height: fit-content;
+}

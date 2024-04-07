@@ -1,0 +1,144 @@
+/* For every page */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --background-color: #a3282b;
+    --background-color2: #240046;
+    --background-color3: #3c096c;
+    --background-color4: #5a189a;
+    --background-color5: #7b2cbf;
+    --background-color6: #9d4edd;
+    --background-color7: #c77dff;
+    --background-color8: #e0aaff;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* for header */
+header{
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    padding: 15px 3%;
+    padding-bottom: 0;
+    background: #ffffffbd;
+    backdrop-filter: blur(3px);
+}
+.logoBar{
+    width: 100%;
+    border-bottom: 2px solid grey;
+    display: flex;
+    padding-bottom: 9px;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerLogo a{
+    display: flex;
+    align-items: center;
+}
+.headerLogo a img{
+    height: 38px;
+}
+.headerItems{
+    display: flex;
+    gap: 3%;
+    width: 100%;
+    justify-content: flex-end;
+    color: var(--color);
+}
+.headerItems li{
+    list-style: none;
+}
+.headerItems li a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-wrap: nowrap;
+    font-size: 16px;
+    transition: all 500ms;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.headerItems li a:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.HamburgerBar{
+    display: none;
+}
+#BarIcon{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+.Bar{
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: black;
+    transition: all 500ms;
+}
+.Bar1{
+    transform-origin: left;
+}
+.Bar3{
+    transform-origin: left;
+}
+
+.menuItems{
+    overflow-x: hidden;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 0px;
+    background: white;
+    margin-top: 17px;
+    transition: all 500ms;
+}
+.menuItems ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.menuItems li{
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.564);
+}
+.menuItems li a{
+    padding: 10px;
+    text-decoration: none;
+    color: grey;
+    text-wrap: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+}
+#submitBookbtn{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    text-wrap: nowrap;
+    background-color: black;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width : 730px) {
+    .HamburgerBar{
+        display: block;
+    }
+    .headerItems{
+        display: none;
+    }
+}

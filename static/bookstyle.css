@@ -1,0 +1,77 @@
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    background-size: cover;
+    margin-bottom: 100px;
+}
+
+.bookHighlight{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.bookHighlight h1{
+    text-align: center;
+    color: white;
+}
+.bookHighlight img{
+    width: 35vw;
+    align-self: center;
+    box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.372);
+}
+.bookHighlight p:nth-child(3){
+    font-size: 30px;
+    font-weight: bold;
+}
+.bookHighlight>p:nth-child(4){
+    font-size: 15px;
+    color: #a3282b;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+.bookHighlight>p:nth-child(4)::before{
+    content: "by";
+    font-size: 15px;
+    color: black;
+}
+.bookDetail{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.bookDetail p{
+    font-size: 15px;
+}
+
+.aboutBook{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.aboutToggle{
+    display: flex;
+    gap: 10px;
+}
+.aboutToggle div{
+    padding: 10px;
+    /* font-weight: bold; */
+    font-family: math;
+}
+.abstract{
+    background: #a3282b;
+    color: white;
+}
+.abstractText,.authorText{
+    /* border: 1px solid grey; */
+    /* padding: 10px; */
+    text-align: justify;
+    font-family: math;
+}
+.authorText{
+    display: none;
+}

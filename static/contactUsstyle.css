@@ -1,0 +1,123 @@
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    background: url("/static/images/bodybg.jpg");
+    background-size: cover;
+}
+
+.contactblock {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.contactblock form {
+    width: 50vw;
+    min-width: fit-content;
+    max-width: 335px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    box-shadow: 5px 12px 10px 0px #0000001f;
+}
+
+input,
+select,
+option {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    min-height: fit-content;
+}
+
+textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    border-radius: 5px;
+    background: #5457ff;
+    color: white;
+    border: none;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.contactText h2 span,
+.formText h2 span {
+    color: #a3282b;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactDetails>div {
+    display: flex;
+    flex-direction: column;
+    gap: 58px;
+    padding-top: 10px;
+}
+
+.contactText img {
+    height: 27px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    gap: 5px;
+}
+
+.contactText>p {
+    text-wrap: wrap;
+    text-align: center;
+}
+
+.contactCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+}
