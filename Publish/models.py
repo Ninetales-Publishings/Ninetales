@@ -6,9 +6,12 @@ from django.db import models
 class PubishedBooks(models.Model):
     BookFile = models.FileField(upload_to='bookCover(ForPublishedBooks)/',default=None,null=True)
     BookName = models.CharField(max_length=40,default="book",null= False)
-    Writername = models.CharField(max_length=500,default="user",null= False)
+    Writername = models.CharField(max_length=500,default="writer",null= False)
+    BookFormat = models.CharField(max_length=500,default="paperback",null= False)
+    Pages = models.IntegerField(default=0,null=False)
     ISBNNo = models.CharField(max_length=40,default="user",null= False)
-    Abstract = models.TextField(default=None,null=False)
+    AboutBook = models.TextField(default="aboutBook",null=False)
+    AboutAuthor = models.TextField(default="aboutAuthor",null=False)
     DOIDetail = models.CharField(max_length=40,default="user",null= True)
 
 

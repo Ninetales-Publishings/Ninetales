@@ -5,7 +5,7 @@ from Publish.models import *
 
 
 class admin_PubishedBooks(admin.ModelAdmin):
-    list_display = ("BookFile","BookName","Writername","ISBNNo","Abstract","DOIDetail")
+    list_display = ("BookFile","BookName","Writername","BookFormat","Pages","ISBNNo","AboutBook","AboutAuthor","DOIDetail")
 
 admin.site.register(PubishedBooks,admin_PubishedBooks)
 
