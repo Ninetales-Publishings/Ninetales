@@ -16,10 +16,12 @@
             {% for book in topbooks %}
             <div class="book">
                 <a href="/books/{{book.BookName}}">
-                    <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="">
+                    <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="" loading="lazy">
                     <div class="bookdetail">
                         <b>{{ book.BookName }}</b>
+                        {% if book.Writername != "writer" %}
                         <p style="font-size: 14px;">by {{ book.Writername}}</p>
+                        {% endif %}
                         <p></p>
                     </div>
                 </a>
@@ -32,11 +34,12 @@
             {% for book in books %}
             <div class="book">
                 <a href="/books/{{book.BookName}}">
-                    <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="">
+                    <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="" loading="lazy">
                     <div class="bookdetail">
                         <b>{{ book.BookName }}</b>
+                        {% if book.Writername != "writer" %}
                         <p style="font-size: 14px;">by {{ book.Writername}}</p>
-                        <p></p>
+                        {% endif %}
                     </div>
                 </a>
             </div>

@@ -16,15 +16,19 @@
         <div class="bookHighlight">
             <h1>{{ book.BookName }}</h1>
             {% if book %}
-            <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="">
+            <img src="{{MEDIA_URL}}{{book.BookFile}}" alt="" loading="lazy">
             <p>{{ book.BookName }}</p>
-            <p> {{ book.Writername }}</p>
+            {% if book.Writername != "writer" %}
+            <p style="font-size: 14px;">{{ book.Writername}}</p>
+            {% endif %}
 
             <div class="bookDetail">
                 <b>Pages</b>
-                <p>67 pages</p>
+                <p>{{ book.Pages }}</p>
                 <b>ISBN</b>
                 <p>{{ book.ISBNNo }}</p>
+                <b>Format</b>
+                <p>{{ book.BookFormat }}</p>
             </div>
 
             <div class="aboutBook">
@@ -37,11 +41,7 @@
                     </div> -->
                 </div>
                 <div class="abstractText">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus odit, delectus velit itaque sit fugiat ut perspiciatis, et asperiores minima adipisci. Distinctio temporibus ex eum sunt corrupti ipsum dignissimos quae!
-                    Corrupti beatae natus cupiditate esse vero. Sequi facere est iste nisi praesentium? Veritatis, qui rerum. Accusantium ipsum velit excepturi? Obcaecati quaerat facere dignissimos excepturi enim pariatur non, iste aperiam eligendi?
-                    Non distinctio beatae obcaecati eius accusamus veritatis iure consequatur cupiditate neque fugiat, soluta repudiandae ipsa quaerat numquam dolores saepe impedit. Consequuntur placeat ipsa cum? Placeat neque voluptatibus provident earum laboriosam.
-                    Dolorum, non dicta fuga ipsum est molestias ab, aperiam corporis quia ducimus voluptatibus praesentium. Soluta, vel eveniet? Voluptate impedit consectetur enim! Veniam neque saepe ratione dignissimos nulla corrupti at et.
-                    Natus, quae? Deleniti expedita placeat iusto natus sequi libero ea perspiciatis mollitia commodi architecto, culpa suscipit deserunt accusamus velit nemo vitae sint quaerat? Cumque sed doloremque, praesentium autem perferendis ea?
+                    {{ book.AboutBook }}
                 </div>
                 <!-- <div class="authorText">
                     <img src="/static/images/whiteSmartphone.png" height="100" width="100" alt="">
