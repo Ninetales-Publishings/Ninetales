@@ -17,13 +17,11 @@ main{
     padding: 20px;
     min-height: calc(100vh - 48px);
     border-radius: 0 0 10% 10%;
-    /* background: url("/static/images/introbgGirl.png"); */
 }
 .introImage{
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* border-bottom: 1px solid black; */
 }
 .introImage img{
     height: clamp(20px,65vh,55vw);
@@ -51,6 +49,14 @@ main{
     text-wrap: wrap;
     font-weight: 900;
     text-align: left;
+}
+.introtext span div{
+    /* text-wrap: nowrap; */
+}
+/* edit */
+.introtext span b{
+    color :#970C10;
+    font-weight: 900;
 }
 .introtext p{
     font-size: clamp(14px, 2vw, 20px);
@@ -181,6 +187,10 @@ section:has(.carousel)::after{
     right: 0px;
     top: 44%;
 }
+.before img, .after img{
+    width: 30px;
+    opacity: 70%;
+}
 .carouselCard{
     display: flex;
     flex: 0 0 auto;
@@ -193,7 +203,8 @@ section:has(.carousel)::after{
 }
 .carouselCard h1{
     text-decoration: none;
-    font-size: clamp(50px,11vw,100px);
+    font-size: clamp(27px,8vw,100px);
+    text-align: center;
 }
 /************************************************************************************* */
 
@@ -227,6 +238,7 @@ section:has(.carousel)::after{
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    max-width: 24vw; /*edit*/
 }
 .book img{
     height: 165px;
@@ -295,9 +307,9 @@ section:has(.carousel)::after{
     .introtext p{
         text-align: center;
     }
-    
+
     .introMail{
         text-align: center;
     }
-    
+
 }

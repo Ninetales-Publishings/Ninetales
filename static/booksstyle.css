@@ -16,6 +16,8 @@ main{
     gap: 20px;
     padding: 25px;
     height: fit-content;
+    /* width: clamp(312px, 32vw, 409px); */
+    width: 312px;
 }
 
 .sidebar .book a{
@@ -31,7 +33,7 @@ main{
 
 .content{
     padding: 20px;
-    width: calc(100% - 340px);
+    width: clamp(0px,50vw,444px);
     display: flex;
     flex-direction: column;
     border-left: 1px solid black;
@@ -48,8 +50,15 @@ main{
     height: 100px;
 }
 
-@media screen and (max-width : 630px) {
+@media screen and (max-width : 780px) {
     .content{
         width: 100%;
+    }
+    .sidebar{
+        width: 100%;
+    }
+    .main{
+        align-items: center;
+        justify-content: center;
     }
 }
